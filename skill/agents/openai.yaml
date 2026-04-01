@@ -1,0 +1,7 @@
+interface:
+  display_name: "Memory Boost"
+  short_description: "Local memory for facts, preferences, and decisions"
+  default_prompt: "Use $memory-boost to record, retrieve, and compress long-term user facts, preferences, and decisions in a local Markdown memory store."
+
+policy:
+  allow_implicit_invocation: true
