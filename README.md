@@ -1,6 +1,6 @@
-# Memory Boost
+# Open Memory Boost
 
-Memory Boost is a local-first memory layer for Codex.
+Open Memory Boost is a local-first memory layer for Codex.
 
 It helps an AI assistant remember stable facts, user preferences, project decisions, and session summaries across conversations, without depending on external memory services.
 
@@ -8,7 +8,7 @@ It helps an AI assistant remember stable facts, user preferences, project decisi
 
 LLMs are strong at reasoning, but weak at durable continuity.
 
-Memory Boost solves that by giving Codex a lightweight, auditable memory workflow:
+Open Memory Boost solves that by giving Codex a lightweight, auditable memory workflow:
 
 - remember what matters
 - ignore one-off noise
@@ -17,7 +17,7 @@ Memory Boost solves that by giving Codex a lightweight, auditable memory workflo
 
 ## What it does
 
-Memory Boost provides two pieces:
+Open Memory Boost provides two pieces:
 
 ### 1. A Codex Skill
 
@@ -42,7 +42,7 @@ It supports:
 
 ## Memory types
 
-Memory Boost organizes information into a few simple buckets:
+Open Memory Boost organizes information into a few simple buckets:
 
 - `Facts`
 - `Preferences`
@@ -72,17 +72,17 @@ This keeps memory structured, readable, and easy to review by both humans and ag
 ## Example
 
 ```powershell
-python -m memory_boost init
-python -m memory_boost add facts "User prefers concise answers"
-python -m memory_boost add preferences "User prefers Chinese responses for local work"
-python -m memory_boost search concise
-python -m memory_boost list
+open-memory-boost init
+open-memory-boost add facts "User prefers concise answers"
+open-memory-boost add preferences "User prefers Chinese responses for local work"
+open-memory-boost search concise
+open-memory-boost list
 ```
 
 ## Project structure
 
 ```text
-memory-boost/
+open-memory-boost/
 ?? skill/
 ?  ?? SKILL.md
 ?  ?? agents/openai.yaml
@@ -117,7 +117,7 @@ Do not require a cloud backend just to remember simple facts.
 
 ## Use cases
 
-Memory Boost is useful when you want an assistant to:
+Open Memory Boost is useful when you want an assistant to:
 
 - remember your tone and formatting preferences
 - preserve project decisions across sessions
@@ -133,7 +133,7 @@ Clone the repository, then use the `skill/` folder as a Codex skill installation
 For the CLI, install with Python 3.10+ and run:
 
 ```powershell
-python -m memory_boost init
+open-memory-boost init
 ```
 
 ## License

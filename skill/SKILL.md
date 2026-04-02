@@ -1,9 +1,9 @@
 ---
-name: memory-boost
+name: open-memory-boost
 description: "Local persistent memory workflow for Codex. Use when the user asks to remember facts, preferences, decisions, projects, or task state; to summarize prior context; to retrieve relevant long-term memory before answering; or to maintain a lightweight memory store without external services."
 ---
 
-# Memory Boost
+# Open Memory Boost
 
 Use this skill to maintain a durable local memory that helps Codex stay consistent across sessions.
 

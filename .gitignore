@@ -2,4 +2,4 @@
 __pycache__/
 *.pyc
 .venv/
-.memory-boost/
+.open-memory-boost/

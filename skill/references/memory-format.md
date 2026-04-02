@@ -18,7 +18,7 @@ Use a small set of Markdown files or sections with stable headings.
 - [2026-04-01] should memory be project-local or global?
 
 # Session Summaries
-- [2026-04-01] created memory-boost skill for durable local memory
+- [2026-04-01] created open-memory-boost skill for durable local memory
 ```
 
 ## Entry fields

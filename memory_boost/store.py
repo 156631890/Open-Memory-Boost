@@ -48,7 +48,7 @@ def resolve_section(section: str) -> str:
 
 def default_store_path(root: Path | None = None) -> Path:
     root = root or Path.cwd()
-    return root / ".memory-boost" / "memory.md"
+    return root / ".open-memory-boost" / "memory.md"
 
 
 def ensure_store(path: Path) -> None:
@@ -59,7 +59,7 @@ def ensure_store(path: Path) -> None:
 
 
 def render_empty_store() -> str:
-    lines = ["# Memory Boost Store", ""]
+    lines = ["# Open Memory Boost Store", ""]
     for section in SECTIONS:
         lines.extend([f"## {section}", ""])
     return "\n".join(lines).rstrip() + "\n"

@@ -1,4 +1,4 @@
-# Memory Boost Example
+# Open Memory Boost Example
 
 ## Facts
 - [2026-04-01] user likes concise answers

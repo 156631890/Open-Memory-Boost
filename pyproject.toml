@@ -3,14 +3,14 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "memory-boost"
+name = "open-memory-boost"
 version = "0.1.0"
 description = "Local Markdown memory runtime for Codex"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
-  { name = "Memory Boost contributors" }
+  { name = "Open Memory Boost contributors" }
 ]
 keywords = ["codex", "memory", "markdown", "cli"]
 classifiers = [
@@ -20,6 +20,7 @@ classifiers = [
 ]
 
 [project.scripts]
+open-memory-boost = "memory_boost.cli:main"
 memory-boost = "memory_boost.cli:main"
 
 [tool.setuptools]

@@ -8,7 +8,7 @@ from .store import add_entry, default_store_path, ensure_store, iter_entries, re
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="memory-boost", description="Local Markdown memory store for Codex")
+    parser = argparse.ArgumentParser(prog="open-memory-boost", description="Local Markdown memory store for Codex")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     subparsers.add_parser("init", help="Create an empty memory store")
