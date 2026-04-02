@@ -1,5 +1,8 @@
 ﻿# Open Memory Boost
 
+[![CI](https://github.com/156631890/Open-Memory-Boost/actions/workflows/ci.yml/badge.svg)](https://github.com/156631890/Open-Memory-Boost/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 Open Memory Boost 是一个面向 Codex 的本地优先记忆层。
 
 它帮助 AI 助手跨会话记住稳定事实、用户偏好、项目决策和会话摘要，同时不依赖外部记忆服务。
@@ -40,6 +43,16 @@ Open Memory Boost 包含两部分：
 - `search` - 搜索已有记忆
 - `list` - 列出所有记忆
 
+## 快速开始
+
+```powershell
+git clone git@github.com:156631890/Open-Memory-Boost.git
+cd Open-Memory-Boost
+open-memory-boost init
+open-memory-boost add facts "User prefers concise answers"
+open-memory-boost search concise
+```
+
 ## 记忆类型
 
 Open Memory Boost 将信息组织为几个简单类别：
@@ -50,82 +63,35 @@ Open Memory Boost 将信息组织为几个简单类别：
 - `Open Questions`
 - `Session Summaries`
 
-这样能让记忆保持结构化、可读、可审查。
-
-## 核心特性
-
-- 本地优先，可离线使用
-- 不需要外部 API
-- 使用人类可读的 Markdown 存储
-- 提供简单的记忆增删查工具
-- 面向稳定、可复用的上下文，而不是原始聊天记录
-- 方便审计、备份和纳入 Git 管理
-
-## 工作方式
-
-1. 助手识别对话中的稳定信息。
-2. 将这些信息压缩为一条记忆。
-3. 记忆写入本地 Markdown 文件。
-4. 后续请求时，助手搜索相关记忆。
-5. 召回的上下文用于提升连续性和一致性。
-
-## 示例
-
-```powershell
-open-memory-boost init
-open-memory-boost add facts "User prefers concise answers"
-open-memory-boost add preferences "User prefers Chinese responses for local work"
-open-memory-boost search concise
-open-memory-boost list
-```
-
 ## 项目结构
 
 ```text
 open-memory-boost/
 ├─ skill/
-│  ├─ SKILL.md
-│  ├─ agents/openai.yaml
-│  └─ references/
 ├─ memory_boost/
-│  ├─ cli.py
-│  ├─ store.py
-│  └─ __main__.py
 ├─ examples/
 ├─ README.md
 ├─ README.zh-CN.md
+├─ CHANGELOG.md
 ├─ LICENSE
 └─ pyproject.toml
 ```
 
-## 设计原则
-
-- 保持记忆稳定
-- 保持记忆简洁
-- 保持记忆显式
-- 保持记忆可审计
-- 保持记忆本地化
-
-## 适用场景
-
-Open Memory Boost 适合以下需求：
-
-- 记住语气和格式偏好
-- 跨会话保存项目决策
-- 跟踪持续进行中的工作
-- 总结已完成会话
-- 在回答前检索相关上下文
-- 在不依赖外部服务的前提下维持连续性
-
 ## 安装
-
-克隆仓库后，将 `skill/` 目录作为 Codex skill 安装来源。
 
 CLI 需要 Python 3.10+，然后运行：
 
 ```powershell
 open-memory-boost init
 ```
+
+## 发布
+
+本仓库的发布流程很简单：
+
+- 更新 changelog
+- 打标签
+- 从 tag 创建 GitHub Release
 
 ## 许可证
 
