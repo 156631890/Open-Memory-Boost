@@ -1,4 +1,4 @@
-name: ci
+﻿name: ci
 
 on:
   push:
@@ -13,6 +13,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Compile package
-        run: python -m compileall memory_boost
+        run: python -m compileall memory_boost tests
+      - name: Run unit tests
+        run: python -m unittest discover -s tests
       - name: Smoke test CLI
         run: python -m memory_boost init --store ${{ github.workspace }}\\.ci-memory\\memory.md

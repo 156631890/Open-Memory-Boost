@@ -1,10 +1,10 @@
 # Open Memory Boost Example
 
 ## Facts
-- [2026-04-01] user likes concise answers
+- [id=demo-1] [date=2026-04-02] [updated=2026-04-02] [source=user] [confidence=high] [status=active] [priority=high] [tags=tone] user prefers concise answers
 
 ## Preferences
-- [2026-04-01] use Chinese for local work
+- [id=demo-2] [date=2026-04-02] [updated=2026-04-02] [source=user] [confidence=high] [status=active] [priority=medium] [tags=language] user prefers Chinese responses for local work
 
 ## Decisions
-- [2026-04-01] prefer local Markdown memory over external services
+- [id=demo-3] [date=2026-04-02] [updated=2026-04-02] [source=user] [confidence=high] [status=active] [priority=high] [tags=project] use open-memory-boost as the project name

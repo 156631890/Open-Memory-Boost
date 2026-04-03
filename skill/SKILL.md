@@ -1,23 +1,24 @@
 ---
 name: open-memory-boost
-description: "Local persistent memory workflow for Codex. Use when the user asks to remember facts, preferences, decisions, projects, or task state; to summarize prior context; to retrieve relevant long-term memory before answering; or to maintain a lightweight memory store without external services."
+description: "Local persistent memory engine for Codex. Use when the user asks to remember facts, preferences, decisions, projects, or task state; to summarize prior context; to retrieve, update, compact, export, or import memory; or to maintain a lightweight memory store without external services."
 ---
 
 # Open Memory Boost
 
-Use this skill to maintain a durable local memory that helps Codex stay consistent across sessions.
+Use this skill to maintain a durable local memory that helps Codex stay consistent across sessions. Prefer the Python API or CLI when you need programmatic integrations, and keep the store compact and auditable.
 
 ## When to use
 
 - A user asks to remember, forget, or update a stable fact.
 - A user preference, decision, or project constraint should persist.
 - You need to retrieve prior context before answering.
+- You need to compact, export, import, or summarize memory.
 - You are building or maintaining a memory layer for another agent.
 
 ## Core rules
 
 - Store only stable, reusable information.
-- Separate facts, preferences, decisions, open questions, and session summaries.
+- Separate facts, preferences, decisions, open questions, summaries, ids, priorities, and tags.
 - Prefer short, structured entries over raw chat logs.
 - Record provenance for anything important: who said it, when, and why it matters.
 - Treat transient, emotional, or one-off details as non-memory unless the user explicitly wants them saved.
@@ -36,21 +37,30 @@ Use this skill to maintain a durable local memory that helps Codex stay consiste
    - `decision`: an agreed project choice.
    - `open_question`: unresolved item that should be revisited.
    - `summary`: compact session recap.
+   - `id`: stable entry identifier used for updates and deletions.
+   - `priority`: high, medium, or low ranking for recall.
+   - `tags`: search helpers for related memory.
 
-3. Compress
-   - Merge duplicates.
-   - Keep the newest confirmed version.
-   - Drop low-signal details.
-   - Preserve source timestamps when they help disambiguate.
-
-4. Recall
+3. Recall
    - Search by entity, topic, time, and task relevance.
    - Prefer direct user statements over inferred memory.
-   - Use only memory that is still relevant to the current request.
+   - Rank results by relevance, recency, and priority.
 
-5. Update
+4. Update
    - Write back changed memory items immediately after a confirmed user correction or decision.
-   - Mark outdated items as superseded instead of silently deleting them when history matters.
+   - Move corrected items instead of creating duplicates.
+
+5. Compact
+   - Merge exact or near-duplicate active entries.
+   - Mark superseded entries explicitly.
+   - Merge tags and keep the most useful text.
+
+6. Export and import
+   - Use JSON export for backups and integrations.
+   - Use JSON import for migrating between stores.
+
+7. Summarize
+   - Produce a compact section-aware summary for quick review.
 
 ## Output discipline
 

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0] - 2026-04-02
+
+### Added
+
+- Rich memory engine with ids, tags, priority, status, update, forget, compact, stats, export, import, and summary workflows.
+- Programmatic Python API for developer integrations.
+- Fuzzy compaction for near-duplicate memory entries.
+- Expanded CLI with JSON output and targeted filtering.
+- Unit tests covering the core engine and CLI.
+
 ## [0.1.0] - 2026-04-02
 
 ### Added
